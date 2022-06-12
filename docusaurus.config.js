@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Today I Learned",
+  title: "TIL by Sook",
   tagline: "Dinosaurs are cool",
   url: "https://sookmax.github.io",
   baseUrl: "/",
@@ -35,21 +35,28 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: "/", // Serve the docs at the site's root
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          // editUrl: "https://github.com/sookmax/til/tree/main/",
+          async sidebarItemsGenerator({
+            defaultSidebarItemsGenerator,
+            ...rest
+          }) {
+            const generatedSidebars = await defaultSidebarItemsGenerator(rest);
+
+            return generatedSidebars;
+          },
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
+        blog: false,
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: [
+            require.resolve("./src/css/custom.css"),
+            require.resolve(
+              "./node_modules/react-lite-youtube-embed/dist/LiteYouTubeEmbed.css"
+            ),
+          ],
         },
       }),
     ],
@@ -58,71 +65,81 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      navbar: {
-        title: "My Site",
-        logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
         },
+      },
+      navbar: {
+        title: "TIL by Sook",
+        // logo: {
+        //   alt: "My Site Logo",
+        //   src: "img/logo.svg",
+        // },
         items: [
-          {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Tutorial",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
-          },
+          // {
+          //   type: "doc",
+          //   docId: "intro",
+          //   position: "left",
+          //   label: "Tutorial",
+          // },
+          // { to: "/blog", label: "Blog", position: "left" },
+          // {
+          //   href: "https://github.com/sookmax/til",
+          //   label: "GitHub",
+          //   position: "right",
+          // },
         ],
       },
       footer: {
         style: "dark",
         links: [
           {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
+            label: "GitHub",
+            href: "https://github.com/sookmax/til",
           },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
+          //   {
+          //     title: "Docs",
+          //     items: [
+          //       {
+          //         label: "Tutorial",
+          //         to: "/docs/intro",
+          //       },
+          //     ],
+          //   },
+          //   {
+          //     title: "Community",
+          //     items: [
+          //       {
+          //         label: "Stack Overflow",
+          //         href: "https://stackoverflow.com/questions/tagged/docusaurus",
+          //       },
+          //       {
+          //         label: "Discord",
+          //         href: "https://discordapp.com/invite/docusaurus",
+          //       },
+          //       {
+          //         label: "Twitter",
+          //         href: "https://twitter.com/docusaurus",
+          //       },
+          //     ],
+          //   },
+          //   {
+          //     title: "More",
+          //     items: [
+          //       {
+          //         label: "Blog",
+          //         to: "/blog",
+          //       },
+          //       {
+          //         label: "GitHub",
+          //         href: "https://github.com/facebook/docusaurus",
+          //       },
+          //     ],
+          //   },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Sook Chung. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

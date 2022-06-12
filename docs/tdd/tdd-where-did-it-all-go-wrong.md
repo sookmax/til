@@ -1,12 +1,23 @@
 ---
-sidebar_position: 1
 ---
 
 # TDD, Where Dit It All Go Wrong
 
 This section is based on my watching the youtube video called, **TDD, Where Dit It All Go Wrong (Ian Cooper)**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EZ05e7EMOLM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+```mdx-code-block
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+
+<div className="video-container">
+  <LiteYouTubeEmbed
+    id="EZ05e7EMOLM"
+    params="autoplay=1&autohide=1&showinfo=0&rel=0"
+    title="TDD, Where Dit It All Go Wrong (Ian Cooper)"
+    poster="maxresdefault"
+    webp
+  />
+</div>
+```
 
 ## Summary
 
