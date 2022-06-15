@@ -33,9 +33,9 @@ And then create the following key-values inside the json.
 IntelliSense can be triggered by `Ctrl+Space` in any editor window.
 
 :::tip
-By default, quick suggestion is disabled for **markdown** language in vscode, which means you have to manually trigger intelliSense with `Ctrl+Space` everytime you want to use your snippets; you can verify this in **defaultSettings.json**.
+By default, quick suggestion is disabled for **markdown** language in vscode, which means you have to manually trigger intelliSense with `Ctrl+Space` everytime you want to use your snippets; you can confirm this in **defaultSettings.json**.
 
-We can change this behavior by overriding the default behavior in our **settings.json** like below.
+We can change this behavior by overriding the default in our **settings.json** like below.
 
 ```json title="settings.json"
 {
