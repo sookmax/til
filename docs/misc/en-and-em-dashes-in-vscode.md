@@ -18,21 +18,21 @@ And then create the following key-values inside the json.
 ```json title="global.code-snippets.json"
 {
   "endash": {
-    "prefix": "endash",
+    "prefix": "!--",
     "body": "–"
   },
   "emdash": {
-    "prefix": "emdash",
+    "prefix": "!---",
     "body": "—"
   }
 }
 ```
 
-**prefix** is a trigger word for **body**. So every time you type the prefix for a snippet (or substring of it), [intelliSense](https://code.visualstudio.com/docs/editor/intellisense) will show you the snippet name; for example, `endash` or `emdash` above.
+**prefix** is a trigger word for **body**. So every time you type the prefix for a snippet (or substring of it), [intelliSense](https://code.visualstudio.com/docs/editor/intellisense) will show you the snippet name; for example, `endash` or `emdash` above. Feel free to choose any prefix you want.
 
 IntelliSense can be triggered by `Ctrl+Space` in any editor window.
 
-:::tip
+<!-- :::tip
 By default, quick suggestion is disabled for **markdown** language in vscode, which means you have to manually trigger intelliSense with `Ctrl+Space` everytime you want to use your snippets; you can confirm this in **defaultSettings.json**.
 
 We can change this behavior by overriding the default in our **settings.json** like below.
@@ -53,7 +53,4 @@ We can change this behavior by overriding the default in our **settings.json** l
 ```
 
 :::
-
-Happy writing endash / emdash!
-
-![](../../static/img/en-em-dash-snippets.png)
+-->

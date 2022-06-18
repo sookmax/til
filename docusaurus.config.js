@@ -48,6 +48,7 @@ const config = {
 
             return generatedSidebars;
           },
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
