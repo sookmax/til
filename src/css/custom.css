@@ -13,10 +13,18 @@
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 1rem;
-  --ifm-blockquote-font-size: 1rem;
-  --ifm-font-size-base: 1.125rem;
+  --ifm-blockquote-border-color: var(--ifm-color-primary);
+  --ifm-code-font-size: 0.9rem;
+  --ifm-blockquote-font-size: 0.95rem;
+  --ifm-font-size-base: 1rem;
+  --ifm-h1-font-size: 2.5rem;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --tw-prose-bullets: #cbd5e1;
+  --tw-prose-body: #334155;
+  --tw-prose-headings: #0f172a;
+  --tw-prose-captions: #64748b;
+  --ifm-color-content: var(--tw-prose-body);
+  --ifm-heading-color: var(--tw-prose-headings);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -42,4 +50,65 @@
 .yt-lite > .lty-playbtn {
   cursor: pointer;
   border: 0;
+}
+
+blockquote:not([class="styled"]) {
+  margin-left: 1rem;
+}
+
+blockquote[class="styled"] {
+  margin-top: 2rem;
+  padding-right: 1.2rem;
+  padding-left: 2.5rem;
+  border: none;
+  position: relative;
+  background: none;
+}
+
+blockquote[class="styled"]::before {
+  font-family: Arial;
+  content: "\201C";
+  color: var(--ifm-color-primary-light);
+  font-size: 4rem;
+  position: absolute;
+  left: 10px;
+  top: -30px;
+}
+
+blockquote[class="styled"]::after {
+  content: "";
+}
+
+blockquote[class="styled"] span {
+  display: block;
+  color: var(--ifm-color-primary-dark);
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figcaption {
+  color: var(--tw-prose-captions);
+}
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2rem;
+}
+
+.markdown > h2 {
+  --ifm-h2-font-size: 1.5rem;
+}
+
+.markdown > h3 {
+  --ifm-h3-font-size: 1.3rem;
+}
+
+.markdown li::marker {
+  color: var(--tw-prose-bullets);
 }
