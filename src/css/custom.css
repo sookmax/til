@@ -15,8 +15,8 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-blockquote-border-color: var(--ifm-color-primary);
   --ifm-code-font-size: 0.9rem;
-  --ifm-blockquote-font-size: 0.95rem;
-  --ifm-font-size-base: 1rem;
+  --ifm-blockquote-font-size: 1rem;
+  --ifm-font-size-base: 1.1rem;
   --ifm-h1-font-size: 2.5rem;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --tw-prose-bullets: #cbd5e1;
@@ -25,6 +25,10 @@
   --tw-prose-captions: #64748b;
   --ifm-color-content: var(--tw-prose-body);
   --ifm-heading-color: var(--tw-prose-headings);
+}
+
+html[data-theme="dark"] {
+  --ifm-background-surface-color: var(--ifm-background-color);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -37,6 +41,18 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --tw-prose-headings: #ebedf0;
+  --tw-prose-captions: #8d949e;
+}
+
+[data-theme="dark"]:root {
+  --docusaurus-collapse-button-bg: var(--ifm-background-color) !important;
+  --docusaurus-collapse-button-bg-hover: var(--ifm-background-color) !important;
+}
+
+body {
+  max-width: 1300px;
+  margin: auto;
 }
 
 .video-container {
